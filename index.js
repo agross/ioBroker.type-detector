@@ -99,6 +99,7 @@ function ChannelDetector() {
     var patternError     = {role: /^indicator\.error$/,                   indicator: true,                                            name: 'ERROR',              required: false, defaultRole: 'indicator.error'};
     var patternDirection = {role: /^indicator\.direction$/,               indicator: true,                                            name: 'DIRECTION',          required: false, defaultRole: 'indicator.direction'};
     var patternReachable = {role: /^indicator\.reachable$/,               indicator: true,  type: 'boolean',                          name: 'CONNECTED',          required: false, defaultRole: 'indicator.reachable', inverted: true};
+    var patternBattery = {role:/^value\.battery$/,                        indicator: false, type: 'number',                           name: 'BATTERY',            required: false, defaultRole: 'value.battery' };
 
     var patterns = {
         mediaPlayer: {
@@ -136,7 +137,8 @@ function ChannelDetector() {
                 patternReachable,
                 patternLowbat,
                 patternMaintain,
-                patternError
+                patternError,
+                patternBattery
             ],
             type: Types.media
         },
@@ -207,7 +209,8 @@ function ChannelDetector() {
                 patternUnreach,
                 patternLowbat,
                 patternMaintain,
-                patternError
+                patternError,
+                patternBattery
             ],
             type: Types.rgb
         },
@@ -227,7 +230,8 @@ function ChannelDetector() {
                 patternUnreach,
                 patternLowbat,
                 patternMaintain,
-                patternError
+                patternError,
+                patternBattery
             ],
             type: Types.rgb
         },
@@ -245,7 +249,8 @@ function ChannelDetector() {
                 patternUnreach,
                 patternLowbat,
                 patternMaintain,
-                patternError
+                patternError,
+                patternBattery
             ],
             type: Types.rgbSingle
         },
@@ -263,7 +268,8 @@ function ChannelDetector() {
                 patternUnreach,
                 patternLowbat,
                 patternMaintain,
-                patternError
+                patternError,
+                patternBattery
             ],
             type: Types.hue
         },
@@ -279,7 +285,8 @@ function ChannelDetector() {
                 patternUnreach,
                 patternLowbat,
                 patternMaintain,
-                patternError
+                patternError,
+                patternBattery
             ],
             type: Types.ct
         },
@@ -311,7 +318,8 @@ function ChannelDetector() {
                 patternUnreach,
                 patternLowbat,
                 patternMaintain,
-                patternError
+                patternError,
+                patternBattery
             ],
             type: Types.thermostat
         },
@@ -328,7 +336,8 @@ function ChannelDetector() {
                 patternUnreach,
                 patternLowbat,
                 patternMaintain,
-                patternError
+                patternError,
+                patternBattery
             ],
             type: Types.blind
         },
@@ -358,7 +367,8 @@ function ChannelDetector() {
                 patternUnreach,
                 patternLowbat,
                 patternMaintain,
-                patternError
+                patternError,
+                patternBattery
             ],
             type: Types.blindSlider
         },
@@ -380,7 +390,8 @@ function ChannelDetector() {
                 patternUnreach,
                 patternLowbat,
                 patternMaintain,
-                patternError
+                patternError,
+                patternBattery
             ],
             type: Types.blindButtons
         },
@@ -395,7 +406,8 @@ function ChannelDetector() {
                 patternUnreach,
                 patternLowbat,
                 patternMaintain,
-                patternError
+                patternError,
+                patternBattery
             ],
             type: Types.lock
         },
@@ -407,7 +419,8 @@ function ChannelDetector() {
                 patternUnreach,
                 patternLowbat,
                 patternMaintain,
-                patternError
+                patternError,
+                patternBattery
             ],
             type: Types.motion
         },
@@ -418,7 +431,8 @@ function ChannelDetector() {
                 patternUnreach,
                 patternLowbat,
                 patternMaintain,
-                patternError
+                patternError,
+                patternBattery
             ],
             type: Types.window
         },
@@ -429,7 +443,8 @@ function ChannelDetector() {
                 patternUnreach,
                 patternLowbat,
                 patternMaintain,
-                patternError
+                patternError,
+                patternBattery
             ],
             type: Types.windowTilt
         },
@@ -440,7 +455,8 @@ function ChannelDetector() {
                 patternUnreach,
                 patternLowbat,
                 patternMaintain,
-                patternError
+                patternError,
+                patternBattery
             ],
             type: Types.fireAlarm
         },
@@ -451,7 +467,8 @@ function ChannelDetector() {
                 patternUnreach,
                 patternLowbat,
                 patternMaintain,
-                patternError
+                patternError,
+                patternBattery
             ],
             type: Types.door
         },
@@ -466,7 +483,8 @@ function ChannelDetector() {
                 patternUnreach,
                 patternLowbat,
                 patternMaintain,
-                patternError
+                patternError,
+                patternBattery
             ],
             type: Types.dimmer
         },
@@ -479,7 +497,8 @@ function ChannelDetector() {
                 patternUnreach,
                 patternLowbat,
                 patternMaintain,
-                patternError
+                patternError,
+                patternBattery
             ],
             type: Types.light
         },
@@ -493,7 +512,8 @@ function ChannelDetector() {
                 patternUnreach,
                 patternLowbat,
                 patternMaintain,
-                patternError
+                patternError,
+                patternBattery
             ],
             type: Types.volume
         },
@@ -507,7 +527,8 @@ function ChannelDetector() {
                 patternUnreach,
                 patternLowbat,
                 patternMaintain,
-                patternError
+                patternError,
+                patternBattery
             ],
             type: Types.location
         },
@@ -522,7 +543,8 @@ function ChannelDetector() {
                 patternUnreach,
                 patternLowbat,
                 patternMaintain,
-                patternError
+                patternError,
+                patternBattery
             ],
             type: Types.location
         },
@@ -535,7 +557,8 @@ function ChannelDetector() {
                 patternUnreach,
                 patternLowbat,
                 patternMaintain,
-                patternError
+                patternError,
+                patternBattery
             ],
             type: Types.volumeGroup
         },
@@ -547,7 +570,8 @@ function ChannelDetector() {
                 patternUnreach,
                 patternLowbat,
                 patternMaintain,
-                patternError
+                patternError,
+                patternBattery
             ],
             type: Types.slider
         },
@@ -559,7 +583,8 @@ function ChannelDetector() {
                 patternUnreach,
                 patternLowbat,
                 patternMaintain,
-                patternError
+                patternError,
+                patternBattery
             ],
             type: Types.socket
         },
@@ -569,7 +594,8 @@ function ChannelDetector() {
                 patternUnreach,
                 patternLowbat,
                 patternMaintain,
-                patternError
+                patternError,
+                patternBattery
             ],
             type: Types.button
         },
@@ -580,7 +606,8 @@ function ChannelDetector() {
                 patternUnreach,
                 patternLowbat,
                 patternMaintain,
-                patternError
+                patternError,
+                patternBattery
             ],
             type: Types.temperature
         },
@@ -590,7 +617,8 @@ function ChannelDetector() {
                 patternUnreach,
                 patternLowbat,
                 patternMaintain,
-                patternError
+                patternError,
+                patternBattery
             ],
             type: Types.humidity
         },
@@ -600,7 +628,8 @@ function ChannelDetector() {
                 patternUnreach,
                 patternLowbat,
                 patternMaintain,
-                patternError
+                patternError,
+                patternBattery
             ],
             type: Types.image
         },
@@ -611,7 +640,8 @@ function ChannelDetector() {
                 patternUnreach,
                 patternLowbat,
                 patternMaintain,
-                patternError
+                patternError,
+                patternBattery
             ],
             type: Types.info
         }
